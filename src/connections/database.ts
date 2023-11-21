@@ -7,7 +7,7 @@ dotenv.config();
 mongoose.set('debug', false);
 export const connectionParams = {
 	useNewUrlParser: true,
-	useUnifiedTopology: true,
+	
 };
 const uri = process.env.DATABASE_URI!;
 
