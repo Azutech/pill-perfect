@@ -14,12 +14,13 @@ const debugLog: debug.IDebugger = debug('server');
 
 const app = async () => {
 	try {
-		database().catch((err) => console.error(err));
+		
 		httpServer.listen(PORT, () => {
 			logger.info(
 				`Pill Perfect is listening at http://localhost:${PORT} 🚀🚀`,
 			);
 		});
+		database().catch((err) => console.error(err));
 	} catch (err) {
 		console.error(err);
 	}
