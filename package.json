@@ -36,6 +36,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.0.1",
     "rimraf": "^5.0.5",
+    "server": "^1.0.38",
     "winston": "^3.11.0"
   },
   "repository": "https://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@github.com/Azutech/pill-perfect.git"
