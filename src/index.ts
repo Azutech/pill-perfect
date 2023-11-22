@@ -1,29 +1,26 @@
-import http from 'http';
-import dotenv from 'dotenv';
-import database from './connections/database';
-import server from './server';
-import debug from 'debug';
-import { logger } from './middlewares/logger';
+import http from "http";
+import dotenv from "dotenv";
+import database from "./connections/database";
+import server from "./server";
+import debug from "debug";
+import { logger } from "./middlewares/logger";
 
 dotenv.config();
 
-import { PORT } from './utils/config';
+import { PORT } from "./utils/config";
 
 const httpServer = http.createServer(server);
-const debugLog: debug.IDebugger = debug('server');
+const debugLog: debug.IDebugger = debug("server");
 
 const app = async () => {
-	try {
-		
-		httpServer.listen(PORT, () => {
-			logger.info(
-				`Pill Perfect is listening at http://localhost:${PORT} 🚀🚀`,
-			);
-		});
-		database().catch((err) => console.error(err));
-	} catch (err) {
-		console.error(err);
-	}
+  try {
+    httpServer.listen(PORT, () => {
+      logger.info(`Pill Perfect is listening at http://localhost:${PORT} 🚀🚀`);
+    });
+    database().catch((err) => console.error(err));
+  } catch (err) {
+    console.error(err);
+  }
 };
 
 app();
