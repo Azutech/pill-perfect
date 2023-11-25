@@ -18,9 +18,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const logger_1 = require("../middlewares/logger");
 dotenv_1.default.config();
 mongoose_1.default.set('debug', false);
-exports.connectionParams = {
-    useNewUrlParser: true,
-};
+exports.connectionParams = {};
 const uri = process.env.DATABASE_URI;
 const database = () => __awaiter(void 0, void 0, void 0, function* () {
     yield mongoose_1.default

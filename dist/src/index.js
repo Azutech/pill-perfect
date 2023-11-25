@@ -24,10 +24,10 @@ const httpServer = http_1.default.createServer(server_1.default);
 const debugLog = (0, debug_1.default)('server');
 const app = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        (0, database_1.default)().catch((err) => console.error(err));
         httpServer.listen(config_1.PORT, () => {
             logger_1.logger.info(`Pill Perfect is listening at http://localhost:${config_1.PORT} 🚀🚀`);
         });
+        (0, database_1.default)().catch((err) => console.error(err));
     }
     catch (err) {
         console.error(err);

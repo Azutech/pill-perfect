@@ -3,7 +3,7 @@ import { StatusCodes } from 'http-status-codes';
 import { User } from '../../models/users';
 
 export const registration = async (req: Request, res: Response) => {
-	const { firstName, lastName, email, phoneNumber } = req.body;
+	const { firstName, lastName, email, phoneNumber, password } = req.body;
 
 	try {
 		const existingUser = await User.findOne({ email });
@@ -15,6 +15,7 @@ export const registration = async (req: Request, res: Response) => {
 			firstName,
 			lastName,
 			email,
+			password,
 			phoneNumber,
 		});
 
